@@ -19,18 +19,26 @@ void printDeviceInfo();
 void showCommandList();
 void printUptime();
 void checkMemory();
+void printUkrainianGameCompany();
+void STALKER();
+void monthinyear();
+void borch();
 
 Command commands[] = {
     {"допомога", help},
     {"пс", printHello},
+    {"страва", borch},
     {"умп", printLanguages},
     {"рік", printYear},
+    {"місяці", monthinyear},
+    {"гейм", printUkrainianGameCompany},
     {"світло", turnOnLED},
     {"-світло", turnOffLED},
-    {"інфо", printInfo},
-    {"про", printDeviceInfo},
+    {"про", printInfo},
+    {"конфіг", printDeviceInfo},
     {"час", printUptime},
     {"пам'ять", checkMemory},
+    {"S.T.A.L.K.E.R.", STALKER},
     {"команди", showCommandList}
 };
 
@@ -63,16 +71,24 @@ void loop() {
 void help() {
     Serial.println(F(
         "\nпс - привітання світу\n"
+        "\nстрава - національна українська страва"
         "умп - українські мови програмування\n"
         "рік - показує який зараз рік\n"
-        "інфо - вся інформація про систему та пристрій\n"
-        "про - характеристика пристрою\n"
+        "гейм - невеличкий список українських гейм-дейв компаній\n"
+        "місяці - список місяців у році\n"
+        "про - вся інформація про систему та пристрій\n"
+        "конфіг - характеристика пристрою\n"
         "світло - вбудований світлодіод світиться\n"
         "-світло - вбудований світлодіод не світиться\n"
         "час - показує час роботи системи\n"
-        "пам'ять - показує вільну пам'ять"
+        "пам'ять - показує вільну пам'ять\n"
+        "S.T.A.L.K.E.R. - інформація про серії ігор S.T.A.L.K.E.R."
     ));
 }
+
+void monthinyear(){
+  Serial.print(F("\n12 місяців у році:\nСічень, Лютий, Березень, Квітень, Травень, Червень, Липень, Серпень, Вересень, Жовтень, Листопад, Грудень"));
+  }
 
 void printHello() {
     Serial.println(F("\nПривіт світе!"));
@@ -81,6 +97,10 @@ void printHello() {
 void printLanguages() {
     Serial.println(F("\nУкраїнські мови програмування - Мавка, Ціль"));
 }
+
+void borch(){
+  Serial.print(F("\nНаціональна українська страва - борщ"));
+  }
 
 void printYear() {
     Serial.println(F("\nЗараз 2024 рік"));
@@ -95,6 +115,18 @@ void turnOffLED() {
     digitalWrite(13, LOW);
     Serial.println(F("\nСвітлодіод вимикається"));
 }
+
+void STALKER(){
+  Serial.println(F(
+    "\nСерія ігор S.T.A.L.K.E.R.:\n"
+    "Розробник: GSC Game World\n"
+    "Першу гру з серії було створено 2007 року\n"
+    "Серія на цей момент складається з чотирьох ігор: S.T.A.L.K.E.R.: Тінь Чорнобиля, S.T.A.L.K.E.R.: Чисте Небо, S.T.A.L.K.E.R.: Полкик Прип'яті і та частина яку найбільше чекали S.T.A.L.K.E.R. 2: Серце Чорнобиля\n"
+    "Ігри серії підтримуються як і на Windows, так і на Xbox\n"
+    "Також перші три гри з серії ,були об'єднані в S.T.A.L.K.E.R.: Legends of the Zone Trilogy та підтримуються на PlayStation, Nintendo Switch, Xbox, Windows\n"
+    "GSC Game World проводили колаборацію з NonStope випустивши такі енергетики як: помаранчевий S.T.A.L.K.E.R.: Limited Edition та фіолетовий S.T.A.L.K.E.R.: Limited Edition"
+    ));
+  }
 
 void printInfo() {
     Serial.println(F(
@@ -121,6 +153,23 @@ void printDeviceInfo() {
         "Сумісний з Arduino UNO R3"
     ));
 }
+
+void printUkrainianGameCompany(){
+  Serial.println(F(
+    "\nДеякі українські гейм-дейв компанії(список доповнюється)\nPS: в майбутньому можу видалити заради зменшення використання пам'яті пристрою, але список буде перенесений на інші варіанти системи...\n"
+    "GSC Game World\n"
+    "4A Games\n"
+    "Best Way\n"
+    "Action Forms\n"
+    "N-Game Studios\n"
+    "Frogwares\n"
+    "PershaStudia\n"
+    "Brenntkopf Development\n"
+    "Muzt Die Studios\n"
+    "Frag Lab LLC\n"
+    "На цьому все, бо заради економії пам'яті не можу збільшити список..."
+    ));
+  }
 
 void showCommandList() {
     Serial.println(F("\nДоступні команди:"));
