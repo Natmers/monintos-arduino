@@ -2,8 +2,10 @@ English: These are versions of my own operating system for Arduino devices. I ju
 Criticize and comment! It will help me in developing my own skills, so I hope for you!
 
 PS: For test I use Freenove V4.
+And also the system is still based on the Serial Monitor in the Arduino IDE
 
 Українська: Це версії моєї власної операційної системи для пристроїв Arduino. Я просто маю бажання створити свою власну операційну систему тому і поділитися своїми успіхами з іншими. І маю бажання випустити її для багатьох пристроїв.
 Критикуйте та коментуйте! Це допоможе мені в розвитку власних навичок, тому надіюсь на вас!
 
 PS: Для тестів я використовую Freenove V4.
+Та також система покищо базується на базі Serial Monitor в Arduino IDE
